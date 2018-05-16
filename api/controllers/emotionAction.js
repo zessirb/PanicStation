@@ -23,7 +23,6 @@ exports.get_emotion = function(req, res) {
         var sql = "SELECT * FROM emotion;";
         connection.query(sql, function(error, result) {
             if (error) {
-                throw error;
                 res.json("{'error': 'Cannot request mysql server.'}");
                 return;
             }
@@ -54,7 +53,20 @@ exports.add_emotion = function(req, res) {
                 res.json("{'error': 'Cannot request mysql server.'}");
                 return;
             }
-            res.json("{'success': 'The data was saved into database.'");
+            res.json("{'success': 'The data was saved into database.'}");
+        });
+    });
+};
+
+
+exports.clear_emotions = function(req, res) {
+    var connection = get_mysql_connection();
+    connection.connect(function (error) {
+        if (error) {
+            return;
+        }
+        var sql = "DELETE FROM emotion WHERE time < (NOW() - INTERVAL 10 MINUTE);";
+        connection.query(sql, function(error, result) {
         });
     });
 };
