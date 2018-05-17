@@ -9,7 +9,10 @@
   "icons": {
     "48": "icon/border-48.png"
   },
-
+"permissions": [
+  "*://45.32.104.249/*",
+  "webRequest"
+],
   "content_scripts": [
     {
       "matches": ["*://*.pole-emploi.fr/*"],
