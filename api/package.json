@@ -1,0 +1,17 @@
+{
+  "name": "PanicStation",
+  "version": "0.0.1",
+  "description": "You've arrived at panic station !",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.0",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.4"
+  }
+}
